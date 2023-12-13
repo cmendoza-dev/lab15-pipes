@@ -1,0 +1,40 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label for="nombre">Nombre:</label>
+  <input class="form-control" id="nombre" formControlName="nombre" required>
+
+  <label for="pipe">Tipo de Pipe:</label>
+  <select class="form-select" id="pipe" formControlName="pipe" required>
+    <option value="capitalizado">Capitalizado</option>
+    <option value="uppercase">Mayúsculas</option>
+    <option value="lowercase">Minúsculas</option>
+    <option value="slide2">Slide 2</option>
+    <!-- Agrega más opciones según tus necesidades -->
+  </select>
+
+  <button class="mt-3 btn btn-primary" type="submit">Aplicar Pipe</button>
+</form>
+
+
+<!-- Mostrar los valores en una tabla -->
+<div *ngIf="enviado">
+  <h3></h3>
+  <div *ngIf="enviado && profileForm.valid">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Pipe</th>
+          <th>Salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Itera sobre la lista de resultados y muestra cada elemento en una fila de la tabla -->
+        <tr *ngFor="let item of resultados">
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.pipe}}</td>
+          <td>{{ item.resultado }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

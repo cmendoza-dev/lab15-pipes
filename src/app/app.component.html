@@ -1,0 +1,11 @@
+<div class="container">
+  <app-profile-editor [currentLanguage]="currentLanguage"></app-profile-editor>
+</div>
+
+<div class="language-buttons">
+  <button class="btn btn-primary" (click)="setLanguage('es')" [class.active]="currentLanguage === 'es'">Español</button>
+  <button class="btn btn-secondary" (click)="setLanguage('en')" [class.active]="currentLanguage === 'en'">Inglés</button>
+  <button class="btn btn-success" (click)="setLanguage('fr')" [class.active]="currentLanguage === 'fr'">Francés</button>
+</div>
+
+<router-outlet></router-outlet>

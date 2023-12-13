@@ -1,0 +1,12 @@
+/* Estilos para los botones de idioma */
+.language-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.language-buttons button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
